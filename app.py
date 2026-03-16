@@ -1,8 +1,9 @@
+# app.py 內容結構
 import streamlit as st
-from engine import get_layer_data
-from processor import analyze_and_translate
+import engine  # 匯入你的 engine.py
+import processor  # 匯入你的 processor.py
 
-# ... (保留原有的頁面配置與 Sidebar) ...
+# ... 你的 UI 代碼 ...
 
 if st.sidebar.button("🔄 立即搜尋並更新"):
     st.cache_data.clear()
