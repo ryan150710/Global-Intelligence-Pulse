@@ -1,6 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 
+# 正確讀取方式
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+    genai.configure(api_key=api_key)
+except KeyError:
+    st.error("找不到 GEMINI_API_KEY，請在 Streamlit Cloud Settings -> Secrets 中設定。")
+
 # 從 Streamlit 的秘密管理中讀取
 api_key = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=api_key)
