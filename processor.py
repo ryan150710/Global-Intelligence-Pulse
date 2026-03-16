@@ -1,4 +1,9 @@
+import streamlit as st
 import google.generativeai as genai
+
+# 從 Streamlit 的秘密管理中讀取
+api_key = st.secrets["GEMINI_API_KEY"]
+genai.configure(api_key=api_key)
 
 # 請替換為你的 API Key
 genai.configure(api_key="YOUR_GEMINI_API_KEY")
